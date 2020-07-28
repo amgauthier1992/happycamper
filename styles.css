@@ -1,6 +1,916 @@
 * {
     box-sizing: border-box;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Staatliches', cursive; 
+    color: black
+}
+
+@font-face {
+    font-family: "SketchLogs-RyVl";
+    src: url("fonts/SketchLogs-RyVl.ttf") format("truetype");
+  }
+
+html {
+    background: url("happycampimg/forestbig.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+/*smallest size: mobile device*/
+@media screen and (max-width: 480px) {
+
+    .header {
+        display: inline;
+        text-align: center;
+    }
+    
+    h1 {
+        /* background-color: rgba(255,255,255,0.2); */
+        font-family: "SketchLogs-RyVl";
+        color: rgba(22, 12, 1, 0.904);
+        /* border: 1px solid black; */
+        border-radius: 15px;
+        font-size: 2.0em;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: inline-block;
+        text-align: center;
+        background-color: honeydew;
+    }
+    
+    h2 {
+        /* background-color: rgba(255,255,255,0.4); */
+        font-size: 1.4em;
+        text-align: center;
+        margin-bottom: 5px;
+        /* border: 1px solid black; */
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        /* width: 300px; */
+        background-color: honeydew;
+    }
+    
+    h3 {
+        font-size: 1.2em;
+        text-align: center;
+        /* background-color: rgba(255,255,255,0.4); */
+        margin-top: 2px;
+        /* border: 1px solid black; */
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    h4 {
+        font-size: 1.0em;
+        background-color: honeydew;
+    }
+    
+    .pageCounter {
+        font-size: 1.2em;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    label {
+        /* background-color: rgba(255,255,255,0.4); */
+        font-size: 1.0em;
+        margin-right: 1px;
+        /* border: 1px solid black; */
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    form {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    input {
+        font-size: 1.0em;
+        margin-top: 150px;
+        margin-bottom: 10px;
+        padding: 6px;
+        width: 35px;
+    }
+    
+    .home-btn {
+        /* font-size: 1.0em;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        padding: 14px; */
+        /* width: 100px;
+        height: 75px; */
+        font-size: 1.0em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+    }
+    
+    .submit-btn {
+        font-size: 1.0em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        /* margin-top: 50px; */
+        /* padding: 6px; */
+        /* width: 100px; */
+    }
+    
+    .more-btn, .prev-btn {
+        font-size: 1.0em;
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        width: 65px;
+    }
+    
+    .detail-btns {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .detail-btns > button {
+        /* display: inline-block;
+        width: 100px;
+        height: 75px;
+        margin-right: 10px;
+        margin-left: 10px; */
+        font-size: 1.0em;
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 5x; 
+        margin-bottom: 65px;
+        padding: 5px;
+        width: 65px;
+        height: 45px;
+        /* width: 100px;
+        height: 75px; */
+    }
+    
+    .detail-btns > button:hover {
+        color: #faf5f5 !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
+
+    .camp-header {
+        margin-top: 125px;
+    }
+    
+    .camp-img {
+        height: 150px;
+        width: 175px;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
+    
+    .accordion-container {
+        /* margin-top: 5px; */
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+    }
+    
+    .weather-info {
+        /* background-image: url(happycampimg/skysnip.png); */
+        background-repeat: no-repeat;
+        /* background-size: 84px 123px; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 5px;
+        margin-left: 5px;
+        /* padding-left: 10px;
+        padding-right: 10px; */
+        word-wrap: break-word;
+    }
+    
+    .weather-info > h3, .weather-info > h4 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        border-radius: 0;
+        text-align: center;
+        background-color: none;
+        /* background-image: url(happycampimg/skysnip.png); */
+    }
+    
+    .weatherIcon {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 50px;
+        width: 50px;
+    }
+    
+    .fa-home {
+        width: 50px;
+    }
+    
+    img.gif {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50x;
+        width: 100px;
+        height: 100px;
+        margin-top: 100px;;
+    }
+    
+    p, a {
+        color: black;
+        font-size: 1.0em;
+    }
+    
+    a:hover{
+        color: blue;
+    }
+    
+    /* Accordion */
+    
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        font-size: 14px;
+        text-align: left;
+        border: 1px solid #444;
+        outline: none;
+        transition: 0.4s;
+    }
+    
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        /* background-color: rgba(120, 161, 120, 0.877); */
+        background-color: #f6b93b;
+    }
+    
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        text-align: left;
+        padding: 0 18px;
+        width: 100%;
+        background-color: rgba(185, 185, 185, 0.74);
+        display: none;
+        overflow: hidden;
+    }
+    
+    .accordion:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
+    
+    .active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+    }
+    
+    .submit-btn {
+        color: #080808 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #ffffff;
+        padding: 14px;
+        border: 2px solid #494949 !important;
+        display: block;
+        transition: all 0.4s ease 0s;
+    }
+    
+    .home-btn:hover, .submit-btn:hover, .back-results-btn:hover, .more-btn:hover, .prev-btn:hover {
+        color: #000000 !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
+}
+
+/* medium size: tablet/iPad */
+@media screen and (min-width: 480px) {
+
+    .header {
+        display: inline;
+        text-align: center;
+    }
+    
+    h1 {
+        /* background-color: rgba(255,255,255,0.2); */
+        font-family: "SketchLogs-RyVl";
+        color: rgba(22, 12, 1, 0.904);
+        /* border: 1px solid black; */
+        border-radius: 15px;
+        font-size: 3.0em;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: inline-block;
+        text-align: center;
+        background-color: honeydew;
+    }
+    
+    h2 {
+        /* background-color: rgba(255,255,255,0.4); */
+        font-size: 2.2em;
+        text-align: center;
+        margin-bottom: 5px;
+        /* border: 1px solid black; */
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    h3 {
+        font-size: 1.8em;
+        text-align: center;
+        /* background-color: rgba(255,255,255,0.4); */
+        margin-top: 2px;
+        /* border: 1px solid black; */
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    h4 {
+        font-size: 1.6em;
+        background-color: honeydew;
+    }
+    
+    .pageCounter {
+        font-size: 2.0em;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    label {
+        /* background-color: rgba(255,255,255,0.4); */
+        font-size: 1.8em;
+        margin-left: 10px;
+        margin-right: 10px;
+        /* border: 1px solid black; */
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    form {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    input {
+        font-size: 1.8em;
+        margin-top: 250px;
+        margin-bottom: 10px;
+        padding: 12px;
+        width: 75px;
+    }
+    
+    .home-btn {
+        font-size: 1.4em;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        padding: 18px;
+        width: 100px;
+        height: 75px;
+    }
+    
+    .submit-btn {
+        font-size: 1.4em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        padding: 26px;
+        width: 125px;
+    }
+    
+    .more-btn, .prev-btn {
+        font-size: 1.4em;
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 14px;
+        width: 100px;
+    }
+    
+    .detail-btns {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .detail-btns > button {
+        /* display: inline-block;
+        width: 100px;
+        height: 75px;
+        margin-right: 10px;
+        margin-left: 10px; */
+        font-size: 1.4em;
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 14px;
+        width: 100px;
+        height: 75px;
+    }
+    
+    .detail-btns > button:hover {
+        color: #faf5f5 !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
+    
+    .camp-header {
+        margin-top: 180px;
+    }
+    
+    .camp-img {
+        height: 200px;
+        width: 215px;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
+    
+    .accordion-container {
+        margin-top: 25px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+    }
+    
+    .weather-info {
+        /* background-image: url(happycampimg/skysnip.png);
+        background-repeat: no-repeat;
+        background-size: 300px 225px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        word-wrap: break-word; */
+        /* background-image: url(happycampimg/skysnip.png); */
+        background-repeat: no-repeat;
+        /* background-size: 84px 123px; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 10px;
+        margin-top: 10px;
+        /* padding-left: 10px;
+        padding-right: 10px; */
+        word-wrap: break-word;
+    }
+    
+    .weather-info > h3, .weather-info > h4 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        border-radius: 0;
+        text-align: center;
+        background-color: none;
+        /* background-image: url(happycampimg/skysnip.png); */
+    }
+    
+    .weatherIcon {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+        width: 100px;
+    }
+    
+    .fa-home {
+        width: 50px;
+    }
+    
+    img.gif {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50x;
+        width: 100px;
+        height: 100px;
+        margin-top: 350px;
+    }
+    
+    p, a {
+        color: black;
+        font-size: 1.4em;
+    }
+    
+    a:hover{
+        color: blue;
+    }
+    
+    /* Accordion */
+    
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        font-size: 22px;
+        text-align: left;
+        border: 1px solid #444;
+        outline: none;
+        transition: 0.4s;
+    }
+    
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        /* background-color: rgba(120, 161, 120, 0.877); */
+        background-color: #f6b93b;
+    }
+    
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        text-align: left;
+        padding: 0 18px;
+        width: 100%;
+        background-color: rgba(185, 185, 185, 0.74);
+        display: none;
+        overflow: hidden;
+    }
+    
+    .accordion:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
+    
+    .active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+    }
+    
+    .submit-btn {
+        color: #080808 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #ffffff;
+        padding: 20px;
+        border: 2px solid #494949 !important;
+        display: block;
+        transition: all 0.4s ease 0s;
+    }
+    
+    .home-btn:hover, .submit-btn:hover, .back-results-btn:hover, .more-btn:hover, .prev-btn:hover {
+        color: #000000 !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
+}
+
+/* largest size: pc screen */
+@media screen and (min-width: 1024px) {
+
+    .header {
+        display: inline;
+        text-align: center;
+    }
+    
+    h1 {
+        /* background-color: rgba(255,255,255,0.2); */
+        font-family: "SketchLogs-RyVl";
+        color: rgba(22, 12, 1, 0.904);
+        /* border: 1px solid black; */
+        border-radius: 15px;
+        font-size: 4.0em;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: inline-block;
+        text-align: center;
+        background-color: honeydew;
+    }
+    
+    h2 {
+        /* background-color: rgba(255,255,255,0.4); */
+        font-size: 2.6em;
+        text-align: center;
+        margin-bottom: 5px;
+        /* border: 1px solid black; */
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    h3 {
+        font-size: 2.0em;
+        text-align: center;
+        /* background-color: rgba(255,255,255,0.4); */
+        margin-top: 2px;
+        /* border: 1px solid black; */
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    h4 {
+        font-size: 1.7em;
+        background-color: honeydew;
+    }
+    
+    .pageCounter {
+        font-size: 2.0em;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    label {
+        /* background-color: rgba(255,255,255,0.4); */
+        font-size: 2.0em;
+        margin-left: 10px;
+        margin-right: 10px;
+        /* border: 1px solid black; */
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        background-color: honeydew;
+    }
+    
+    form {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    input {
+        font-size: 1.8em;
+        margin-top: 250px;
+        margin-bottom: 10px;
+        padding: 12px;
+        width: 75px;
+    }
+    
+    .home-btn {
+        font-size: 1.4em;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        padding: 18px;
+        width: 100px;
+        height: 75px;
+    }
+    
+    .submit-btn {
+        font-size: 1.4em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        padding: 26px;
+        width: 125px;
+    }
+    
+    .more-btn, .prev-btn {
+        font-size: 1.4em;
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 14px;
+        width: 100px;
+    }
+    
+    .detail-btns {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .detail-btns > button {
+        /* display: inline-block;
+        width: 100px;
+        height: 75px;
+        margin-right: 10px;
+        margin-left: 10px; */
+        /* font-size: 1.4em;
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 14px;
+        width: 100px;
+        height: 75px; */
+    }
+    
+    .detail-btns > button:hover {
+        color: #faf5f5 !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
+    
+    .camp-img {
+        height: 200px;
+        width: 215px;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
+    
+    .accordion-container {
+        margin-top: 25px;
+        width: 45%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+    }
+    
+    .weather-info {
+        /* background-image: url(happycampimg/skysnip.png); */
+        /* background-repeat: no-repeat; */
+        /* background-size: 300px 225px; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        word-wrap: break-word;
+    }
+    
+    .weather-info > h3, .weather-info > h4 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        border-radius: 0;
+        text-align: center;
+        background-color: none;
+        /* background-image: url(happycampimg/skysnip.png); */
+    }
+    
+    .weatherIcon {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+        width: 100px;
+    }
+    
+    .fa-home {
+        width: 50px;
+    }
+    
+    img.gif {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50x;
+        width: 150px;
+        height: 150px;
+        margin-top: 350px;
+    }
+    
+    p, a {
+        color: black;
+        font-size: 1.4em;
+    }
+    
+    a:hover{
+        color: blue;
+    }
+    
+    /* Accordion */
+    
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        font-size: 22px;
+        text-align: left;
+        border: 1px solid #444;
+        outline: none;
+        transition: 0.4s;
+    }
+    
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        /* background-color: rgba(120, 161, 120, 0.877); */
+        background-color: #f6b93b;
+    }
+    
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        text-align: left;
+        padding: 0 18px;
+        width: 100%;
+        background-color: rgba(185, 185, 185, 0.74);
+        display: none;
+        overflow: hidden;
+    }
+    
+    .accordion:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
+    
+    .active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+    }
+    
+    .submit-btn {
+        color: #080808 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #ffffff;
+        padding: 20px;
+        border: 2px solid #494949 !important;
+        display: block;
+        transition: all 0.4s ease 0s;
+    }
+    
+    .home-btn:hover, .submit-btn:hover, .back-results-btn:hover, .more-btn:hover, .prev-btn:hover {
+        color: #000000 !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
 }
 
 
