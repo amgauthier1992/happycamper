@@ -106,7 +106,6 @@ function generateCampsites(){
 function generateCampDetail(campId){
   let camp = campApp.search.campResults.data[campId]
   let campFees= camp.fees
-  // let campHours = camp.operatingHours[0].description
 
   let campAccessibility = {
     additonalInfo: camp.accessibility.additonalInfo,
@@ -132,21 +131,9 @@ function generateCampDetail(campId){
   
   let descriptionHtml = getCampDescriptionHtml(camp.description).html;
   let campAccessibilityHtml = getCampAccessibilityHtml(camp.accessibility.additionalInfo, campAccessibility.rvInfo,campAccessibility.rvMax,campAccessibility.trailerMax).html;
-  //getCampFeesHtml(campFees) = result
-  //getCampFeesHtml(campFees).html = result.html
-  //return really just says "return at this point"
-  //if you provide something to the right (like a variable or truthy thing) it returns that to whoever called it.
-  //getCampFeesHtml(campFees).html does two things. It calls the function and knows there is an object there then accesses the html property
   let campFeesHtml = getCampFeesHtml(campFees).html;
   let reservationHtml = getReservationHtml(reservation.info, reservation.url).html;
 
-  
-  // $.when(getWeather(camp.latitude,camp.longitude),getCampsites("TX"),googleAPIfx)
-  //   .then ((weather,campsites) =>{
-  //     debugger
-  //   })
-
-  //validation for weather API. If lat/lon != undefined
   $('main').empty();
   $('main').append(`
     <div class="detail-btns">
@@ -155,8 +142,6 @@ function generateCampDetail(campId){
     </div>
     <h2 class="camp-header">${camp.name}</h2>
     ${campImage.html}
-    
-    <!-- <button class="directions-btn js-directions-btn">Get Directions</button> -->
     
     <div class="weather-info">
     </div>
@@ -176,11 +161,6 @@ function generateCampDetail(campId){
         ${campFeesHtml}
       </div>
 
-      <!-- <button class="accordion">Amenities</button>
-      <div class="panel">
-        <p>Lorem ipsum...</p>
-      </div> -->
-
       <button class="accordion">Reservations</button>
       <div class="panel">
         ${reservationHtml}
@@ -199,12 +179,8 @@ function generateCampDetail(campId){
         `)
       })
   }   
-  /************ Validation Functions ************/
-  //These functions check to see if the data being displayed on the UI actually exists in the
-  //json object. 
 
   function getCampDescriptionHtml(description){
-    
     let result = {
       html: "",
       haveDataFor: haveDataFor(description)
@@ -218,7 +194,6 @@ function generateCampDetail(campId){
   }
 
   function getCampAccessibilityHtml(additionalInfo,rvInfo,rvMaxLength,trailerMaxLength){
-    
     let result = {
       html: "",
       has: {
@@ -252,8 +227,8 @@ function generateCampDetail(campId){
     return result;
   }
 }
-function getCampFeesHtml(campFees){
 
+function getCampFeesHtml(campFees){
   let result = {
     html: "",
     has: {}
@@ -308,9 +283,11 @@ function getReservationHtml(reservationInfo, reservationUrl){
   return result;
 }
 
-//Main validation
+/************ Main "Validation" Function ************/
+//This function checks to see if the data being displayed on the UI actually exists in the json object. It passes the return a value of either T/F which
+//is used in the conditional generation functions above to assign a default template if no data exists to display, or the data from the API if it is available to us.
+
 function haveDataFor() {
-  
   let isValid = true;
 
   for(let i = 0; i < arguments.length; i++){
@@ -328,8 +305,6 @@ function haveDataFor() {
 
 //**********PAGE NAVIGATION**********//
 
-//if curr page value is === landing then do whatever is inside of the case statement. if undefined, throw an error.
-//where am i, what do i need to load?
 function routePage(camp = undefined){
   switch(campApp.currentPage){
     case "Landing":
@@ -348,9 +323,7 @@ function routePage(camp = undefined){
   }
 }
 
-//where am i, where am i going?
 function nextPage(){
-  //if im on this do this
   switch(campApp.currentPage){
     case "Landing":
       campApp.currentPage = "ViewCamps"
@@ -377,17 +350,12 @@ function handleNextResultsPage(){
   generateCampsites();
 };
 
-// function handleBackToResults(){
-//   campApp.pageCounter = 0;
-//   generateCampsites();
-// }; 
-
 /********** EVENT HANDLER FUNCTIONS **********/
 
 // These functions handle events (submit, click, etc)
 // When the user submits their search,
 // When they select a campsite,
-// When they interact with the home button, more results button, or the back to results button
+// When they interact with the home button, more results button, or the back to results button etc.
 
 function handleSearchSubmit() {
   $('form').submit(function(event){
@@ -433,17 +401,11 @@ function handleHomeSelect(){
   })
 }
 
-//upon clicking the button we need to go back to the first result
-//page after loading the results
-//how do we get back to this exact page?
-//
 function handleBackToResults(){
-  // $('.js-back-results-btn').on('click', handleBackToResults)
   $('main').on('click','.js-back-results-btn', event =>{
     console.log('button targeted')
     campApp.pageCounter = 0;
     campApp.currentIndex = 0;
-    // campApp.totalPages = 0;
     campApp.currentPage = "ViewCamps"
     routePage();
   })
@@ -472,23 +434,9 @@ function handleAccordion(){
   $('main').on('click', '.accordion', panelSelect)
 }
 
-/*
-what do i need to do?
-what do i need to get this done?
-is this something i can test in a url?- No (will be another API call)
-//https://www.google.com/maps/place/Boston,+MA/
-@42.31435,-70.970284,11z/data=!3m1!4b1!4m5!3m4!1s0x89e3652d0d3d311b:0x787cbf240162e8a0!8m2!3d42.3600825!4d-71.0588801?hl=en
-*/
-
-function handleGetDirections(){
-  /*
-  */
-};
-
 //********* API Fetch Search Results **********//
 
 //get campsite data from API and return it back as json.
-
 function getCampsites(stateValue){
   const parameters = {
     api_key: campApp.npsApi.key,
@@ -498,12 +446,11 @@ function getCampsites(stateValue){
   const queryString = $.param(parameters);
   const url = `${campApp.npsApi.baseUrl}?${queryString}`;
   
-  //return the result of queryFor. give me a state to get json data from
+  //return the result of queryFor. gives us a state to get json data from
   return queryFor(url);
 }
 
 function getWeather(latitude,longitude){
-  //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={your api key}
   const parameters = {
     appid: campApp.weatherApi.key,
     lat: latitude,
@@ -527,7 +474,7 @@ function getWeather(latitude,longitude){
 }
 
 function queryFor(url){
-  //returning the promise of something coming back. "im going to give you campsites". Can also use queryFor to use weather API.
+  //returning the promise here instead of using second .then
   return fetch(url)
     .then(response => {
       if (response.ok) {
@@ -535,7 +482,6 @@ function queryFor(url){
       }
       throw new Error(response.statusText);
     })
-    // looks for the p tag in the UI and updates the text to the error message. message is a built in prop for error
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
