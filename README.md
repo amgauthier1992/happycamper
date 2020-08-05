@@ -41,14 +41,14 @@ Park/Camp Detail:
 ## Features
 
 * Search for National Parks & campgrounds by state
-* Find pertinent information on specific RV/trailer/mobile camper limitations of each park (i.e. size restrictions)
+* Find pertinent information on specific RV/trailer/mobile camper limitations of each park/campground (i.e. size restrictions)
 * Find information about park/campground fees
 * Find information about reservation policies of specific parks/campgrounds
 * See current weather in the area where the park/campground is located to make informed travel decisions
 
 ## Future Implementations/Tentative Additions
 
-* Integrate separate API call to create a "Get Directions" button on the Display Detail Page
+* Integrate separate API call to create a "Get Directions" button on the Park/Camp Detail screen
 * Integrate camp/park amenities information from the NPS API into Park/Camp Detail screen
 
 ## Github Pages/Live Demo
