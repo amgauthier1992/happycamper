@@ -11,7 +11,7 @@ An application designed to help those that are living and traveling on the move.
 
 ## Motivation
 
-My wife and I have talked about living in a tiny home on wheels for almost a year now. I wanted to attempt the creation of a centralized resource that would give us (and others) information about places where we could park or stay if we ever were to have some sort of mobile tiny home and/or RV setup. 
+My wife and I have talked about living in a tiny home on wheels for almost a year now. I wanted to attempt the creation of a centralized resource that would give us (and others) information about places where we could park or stay if we ever were to have a mobile tiny home and/or RV setup. 
 
 ## Screenshots
 Landing Page:
@@ -41,14 +41,14 @@ Park/Camp Detail:
 ## Features
 
 * Search for National Parks & campgrounds by state
-* Find pertinent information on specific RV/trailer/mobile camper limitations of each park (i.e. Max Length/size restrictions)
+* Find pertinent information on specific RV/trailer/mobile camper limitations of each park (i.e. size restrictions)
 * Find information about park/campground fees
 * Find information about reservation policies of specific parks/campgrounds
 * See current weather in the area where the park/campground is located to make informed travel decisions
 
 ## Future Implementations/Tentative Additions
 
-* Integrate API call to create a "Get Directions" button to the park that is searched for
+* Integrate separate API call to create a "Get Directions" button on the Display Detail Page
 * Integrate camp/park amenities information from the NPS API into Park/Camp Detail screen
 
 ## Github Pages/Live Demo
