@@ -37,7 +37,7 @@ function generateSearchPage(){
   <form id="js-form">
     <label for="js-search-state">Enter a valid state code:</label>
     <input id="js-search-state" type="text" name="search-state" placeholder="XX" required>
-    <label for="js-max-results">Results to display:</label>
+    <label for="js-max-results">Results per page:</label>
     <input id="js-max-results" type="number" name="max-results" value="5" required>
     <button class="submit-btn js-submit-btn" type="submit">Submit</button>
   </form>
@@ -117,7 +117,7 @@ function generateCampDetail(campId){
   let campImage = {
     url: camp.images[0]?.url,
     alt: camp.images[0]?.altText,
-    html: `<img class="camp-img js-camp-img" src="happycampimg/rv2.PNG" alt="rvPlaceholder">`
+    html: `<img class="camp-detail-img js-camp-img" src="happycampimg/rv2.PNG" alt="rvPlaceholder">`
   }
 
   let reservation = {
@@ -126,7 +126,7 @@ function generateCampDetail(campId){
   }
 
   if (camp.images && camp.images.length > 0) {
-    campImage.html = `<img class="camp-img js-camp-img" src="${campImage.url}" alt="${campImage.alt}">`
+    campImage.html = `<img class="camp-detail-img js-camp-img" src="${campImage.url}" alt="${campImage.alt}">`
   }
   
   let descriptionHtml = getCampDescriptionHtml(camp.description).html;
@@ -343,11 +343,13 @@ function handlePreviousResultsPage(){
   campApp.pageCounter--;
   campApp.currentIndex = (campApp.pageCounter - 1) * campApp.search.criteria.resultsToDisplay;
   generateCampsites();
+  window.scrollTo(0,0);
 };
 
 function handleNextResultsPage(){
   campApp.pageCounter++;
   generateCampsites();
+  window.scrollTo(0,0);
 };
 
 /********** EVENT HANDLER FUNCTIONS **********/
@@ -384,6 +386,7 @@ function campsiteSelect(event){
   $(event.currentTarget).off('click', campsiteSelect)
   campApp.currentPage = "ViewCampDetail"
   routePage(event.currentTarget.dataset.campid);
+  window.scrollTo(0,0);
 }
 
 function handleCampsiteSelect(){
