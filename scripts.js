@@ -31,14 +31,66 @@ function generateSearchPage(){
   return `
   <div class="header">
     <h1>&#10524;Happy Camper&#8608</h1>
-    <h2>Discover National Park campsites in your state that are suitable for RVs, trailers and other mobile campers</h2>
+    <h2><span class="head-span">Discover National Park campsites in your state that are suitable for RVs, trailers and other mobile campers</span></h2>
   </div>
 
   <form id="js-form">
-    <label for="js-search-state">Enter a valid state code:</label>
-    <input id="js-search-state" type="text" name="search-state" placeholder="XX" required>
+    <label for="js-search-state">Select a state:</label>
+    <input list="stateCodes" name="search-state" id="js-search-state" required>
+    <datalist id="stateCodes">
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennslyvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+    </datalist>
     <label for="js-max-results">Results per page:</label>
-    <input id="js-max-results" type="number" name="max-results" value="5" required>
+    <input id="js-max-results" type="number" name="max-results" min="1" value="5" required>
     <button class="submit-btn js-submit-btn" type="submit">Submit</button>
   </form>
   `;
@@ -49,7 +101,15 @@ function generateCampsites(){
 
   $('main').empty();
   $('main').append(`<button class="home-btn js-home-btn"><i class="fa fa-home"></i></button>`)
-  $('main').append(`<h1><span>Choose a Park</span></h1>`)
+
+  if (campApp.search.campResults.data.length === 0){
+    $('main').append(`<h1><span>Sorry - No results found</span></h1>`)
+  }
+
+  if (campApp.search.campResults.data.length >= 1){
+    $('main').append(`<h1><span>Choose a Park</span></h1>`)
+  }
+
   for (let i = campApp.currentIndex; i < (campApp.pageCounter * campApp.search.criteria.resultsToDisplay); i++){
     let camp = campsites.data[i]
     if (camp == undefined){
@@ -75,8 +135,8 @@ function generateCampsites(){
       }
 
     $('main').append(`
-      <h2>${camp.name}</h2>
-      <h3>${campAddressHtml}</h3>
+      <h2><span class="head-span">${camp.name}</span></h2>
+      <h3><span class="head-span">${campAddressHtml}</span></h3>
       ${campImgHtml} 
     `)
 
@@ -140,7 +200,7 @@ function generateCampDetail(campId){
       <button class="home-btn js-home-btn"><i class="fa fa-home"></i></button>
       <button class="js-back-results-btn"><span>Back To Results</span></button>
     </div>
-    <h2 class="camp-header">${camp.name}</h2>
+    <h2 class="camp-header"><span class="head-span">${camp.name}</span></h2>
     ${campImage.html}
     
     <div class="weather-info">
@@ -172,10 +232,10 @@ function generateCampDetail(campId){
       .then(weatherDetail => {
         console.log("weather", weatherDetail)
         $('.weather-info').append(`
-            <h3>${weatherDetail.name}</h3>
-            <h4>${weatherDetail.description}</h3>
+            <h3 class="weather-header"><span class="w-head-span">${weatherDetail.name}</span></h3>
+            <h4><span>${weatherDetail.description}</span></h3>
             <img class="weatherIcon" src="${weatherDetail.icon}" alt="${weatherDetail.category}" />
-            <h4>${weatherDetail.currentTemp}&#176;F</h3>
+            <h4><span>${weatherDetail.currentTemp}&#176;F</span></h3>
         `)
       })
   }   
@@ -368,7 +428,7 @@ function handleSearchSubmit() {
     campApp.search.campResults = 0;
     $('main').empty();
     $('main').append(`<img class="gif" src="happycampimg/loading1.gif">`);
-    $('main').append(`<h2>Loading...</h2>`)
+    $('main').append(`<h2><span class="head-span">Loading...</span></h2>`)
 
     //getCampsites returns a promise. it gets us all campsites for a particular state.
     getCampsites(campApp.search.criteria.stateCode,campApp.search.criteria.resultsToDisplay)
