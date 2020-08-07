@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: "SketchLogs-RyVl";
-    src: url("/fonts/SketchLogs-RyVl.ttf") format("truetype");
+    src: url("./fonts/SketchLogs-RyVl.ttf") format("truetype");
 }
 
 html {
