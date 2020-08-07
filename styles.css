@@ -6,8 +6,8 @@
 
 @font-face {
     font-family: "SketchLogs-RyVl";
-    src: url("fonts/SketchLogs-RyVl.ttf") format("truetype");
-  }
+    src: url("/fonts/SketchLogs-RyVl.ttf") format("truetype");
+}
 
 html {
     background: url("happycampimg/forestbig.jpg") no-repeat center center fixed; 
@@ -640,7 +640,7 @@ a:hover{
         font-family: "SketchLogs-RyVl";
         color: rgba(22, 12, 1, 0.904);
         border-radius: 15px;
-        font-size: 3.6em;
+        font-size: 4.6em;
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 5px;
@@ -651,17 +651,17 @@ a:hover{
     }
 
     h2 {
-        font-size: 2.3em;
+        font-size: 2.8em;
         text-align: center;
         margin-bottom: 5px;
         padding-left: 10px;
         padding-right: 10px;
         border-radius: 15px;
-        width: 600px;
+        width: 1000px;
     }
 
     h3 {
-        font-size: 2.0em;
+        font-size: 2.4em;
         text-align: center;
         margin-top: 2px;
         padding-left: 10px;

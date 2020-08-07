@@ -10,7 +10,7 @@ const campApp = {
   },
   npsApi: {
     key: "KFwuzmQlFFSDXKHJJPZNEj1rHD4YKRBlD9OOhqrh",
-    baseUrl: "https://developer.nps.gov/api/v1/campgrounds"
+    baseUrl: "https://developer.nps.gov/api/v1/campgrounds",
   },
   weatherApi: {
     key: "ebd87c92a3dbb9c388f839a7cfd18221",
@@ -504,6 +504,7 @@ function getCampsites(stateValue){
   const parameters = {
     api_key: campApp.npsApi.key,
     stateCode: stateValue,
+    limit: 100
   };
 
   const queryString = $.param(parameters);
