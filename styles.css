@@ -5,8 +5,13 @@
 }
 
 @font-face {
-    font-family: "SketchLogs-RyVl";
-    src: url("./fonts/SketchLogs-RyVl.ttf") format("truetype");
+    font-family: 'SketchLogs-RyVl';
+    src: url('./fonts/SketchLogs-RyVl.ttf') format('truetype');
+    src: url('./fonts/SketchLogs.eot');
+    src: url('./fonts/SketchLogs.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/SketchLogs.woff2') format('woff2'),
+        url('./fonts/SketchLogs.woff') format('woff'),
+        url('./fonts/SketchLogs.svg#SketchLogs') format('svg');
 }
 
 html {
