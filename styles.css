@@ -160,7 +160,6 @@ input {
 }
 
 .detail-btns > button {
-    /* font-size: 0.75em; */
     text-align: center;
     display: inline-block;
     margin-top: 10px;
@@ -246,7 +245,7 @@ img.gif {
     padding: 50x;
     width: 85px;
     height: 85px;
-    margin-top: 100px;;
+    margin-top: 150px;
 }
 
 p, a {
@@ -326,12 +325,12 @@ a:hover{
         display: inline;
         text-align: center;
     }
-    
+
     h1 {
         font-family: "SketchLogs-RyVl";
         color: rgba(22, 12, 1, 0.904);
         border-radius: 15px;
-        font-size: 3.0em;
+        font-size: 3.6em;
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 5px;
@@ -340,96 +339,116 @@ a:hover{
         text-align: center;
         background-color: honeydew;
     }
-    
+
     h2 {
-        font-size: 2.2em;
+        font-size: 2.3em;
         text-align: center;
         margin-bottom: 5px;
         padding-left: 10px;
         padding-right: 10px;
         border-radius: 15px;
-        background-color: honeydew;
+        width: 600px;
     }
-    
+
     h3 {
-        font-size: 1.8em;
+        font-size: 2.0em;
         text-align: center;
         margin-top: 2px;
         padding-left: 10px;
         padding-right: 10px;
         border-radius: 15px;
+        width: 600px;
+    }
+
+    .weather-header {
+        display: inline;
         background-color: honeydew;
     }
-    
+
+    .head-span {
+        display: inline-block;
+        background-color: honeydew;
+        border-radius: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     h4 {
-        font-size: 1.6em;
+        display: block;
+        font-size: 0.8em;
+        width: 73px;
         background-color: honeydew;
     }
-    
+
     .pageCounter {
-        font-size: 2.0em;
+        font-size: 1.8em;
         text-align: center;
         padding-left: 15px;
         padding-right: 15px;
         border-radius: 15px;
         background-color: honeydew;
     }
-    
+
     label {
         font-size: 1.8em;
-        margin-left: 10px;
-        margin-right: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
         border-radius: 15px;
         background-color: honeydew;
     }
-    
+
     form {
         display: inline-block;
         text-align: center;
+        margin-top: 75px;
     }
-    
+
     input {
         font-size: 1.8em;
-        margin-top: 250px;
+        margin-top: 75px;
         margin-bottom: 10px;
         padding: 12px;
-        width: 75px;
+        width: 90px;
     }
-    
+
     .home-btn {
-        font-size: 1.4em;
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-        padding: 18px;
-        width: 100px;
-        height: 75px;
-    }
-    
-    .submit-btn {
-        font-size: 1.4em;
+        font-size: 1.8em;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 50px;
-        padding: 26px;
-        width: 125px;
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+        height: 75px;
+        width: 115px;
     }
-    
+
+    .submit-btn {
+        font-size: 1.8em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+    }
+
     .more-btn, .prev-btn {
-        font-size: 1.4em;
+        font-size: 1.8em;
         text-align: center;
         display: inline-block;
         margin-top: 10px;
-        margin-right: 10px;
-        margin-left: 10px;
-        padding: 14px;
-        width: 100px;
+        margin-right: 5px;
+        margin-left: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        width: 115px;
     }
-    
+
     .detail-btns {
         display: flex;
         justify-content: center;
@@ -437,19 +456,24 @@ a:hover{
         top: 0;
         right: 0;
     }
-    
+
     .detail-btns > button {
-        font-size: 1.4em;
         text-align: center;
         display: inline-block;
         margin-top: 10px;
         margin-right: 10px;
-        margin-left: 10px;
-        padding: 14px;
+        margin-left: 10px; 
+        margin-bottom: 65px;
+        padding: 5px;
         width: 100px;
-        height: 75px;
+        height: 65px;
     }
-    
+
+    .detail-btns > button > span {
+        display: block;
+        font-size: 1.4em;
+    }
+
     .detail-btns > button:hover {
         color: #faf5f5 !important;
         background: #f6b93b;
@@ -457,97 +481,111 @@ a:hover{
         transition: all 0.4s ease 0s;
         cursor: pointer;
     }
-    
+
     .camp-header {
-        margin-top: 180px;
+        margin-top: 200px;
     }
-    
+
     .camp-img {
-        height: 200px;
-        width: 215px;
+        height: 225px;
+        width: 250px;
         border-radius: 50%;
         margin-top: 10px;
         margin-bottom: 40px;
         cursor: pointer;
     }
-    
+
+    .camp-detail-img {
+        height: 250px;
+        width: 275px;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-bottom: 23px;
+        cursor: default;
+    }
+
     .accordion-container {
-        margin-top: 25px;
-        width: 80%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 100px;
     }
-    
+
     .weather-info {
         background-repeat: no-repeat;
         position: absolute;
         top: 0;
         left: 0;
-        margin-left: 10px;
         margin-top: 10px;
+        margin-left: 10px;
         word-wrap: break-word;
     }
-    
-    .weather-info > h3, .weather-info > h4 {
-        margin-top: 0px;
+
+    .weather-info > h3 {
+        margin-top: 10px;
         margin-bottom: 5px;
         border-radius: 0;
         text-align: center;
         background-color: none;
+        font-size: 30px;
     }
-    
+
+    .weather-info > h4 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border-radius: 0;
+        text-align: center;
+        background-color: none;
+        font-size: 23px;
+        width: 120px;
+    }
+
     .weatherIcon {
         display: block;
-        margin-left: auto;
+        margin-left: 10px;
         margin-right: auto;
         height: 100px;
         width: 100px;
     }
-    
-    .fa-home {
-        width: 50px;
-    }
-    
+
     img.gif {
         display: block;
         margin-left: auto;
         margin-right: auto;
         padding: 50x;
-        width: 100px;
-        height: 100px;
-        margin-top: 350px;
+        width: 125px;
+        height: 125px;
+        margin-top: 300px;
     }
-    
+
     p, a {
         color: black;
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
-    
+
     a:hover{
         color: blue;
     }
-    
+
     /* Accordion */
-    
+
     .accordion {
         background-color: #eee;
         color: #444;
         cursor: pointer;
         padding: 18px;
         width: 100%;
-        font-size: 22px;
+        font-size: 26px;
         text-align: left;
         border: 1px solid #444;
         outline: none;
         transition: 0.4s;
     }
-    
+
     /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
     .active, .accordion:hover {
         background-color: #f6b93b;
     }
-    
+
     /* Style the accordion panel. Note: hidden by default */
     .panel {
         text-align: left;
@@ -557,7 +595,7 @@ a:hover{
         display: none;
         overflow: hidden;
     }
-    
+
     .accordion:after {
         content: '\02795'; /* Unicode character for "plus" sign (+) */
         font-size: 13px;
@@ -565,22 +603,22 @@ a:hover{
         float: right;
         margin-left: 5px;
     }
-    
+
     .active:after {
         content: "\2796"; /* Unicode character for "minus" sign (-) */
     }
-    
+
     .submit-btn {
         color: #080808 !important;
         text-transform: uppercase;
         text-decoration: none;
         background: #ffffff;
-        padding: 20px;
+        padding: 12px;
         border: 2px solid #494949 !important;
         display: block;
         transition: all 0.4s ease 0s;
     }
-    
+
     .home-btn:hover, .submit-btn:hover, .back-results-btn:hover, .more-btn:hover, .prev-btn:hover {
         color: #000000 !important;
         background: #f6b93b;
@@ -588,7 +626,7 @@ a:hover{
         transition: all 0.4s ease 0s;
         cursor: pointer;
     }
-}
+}  
 
 /* largest size: pc screen */
 @media screen and (min-width: 800px) {
@@ -597,12 +635,12 @@ a:hover{
         display: inline;
         text-align: center;
     }
-    
+
     h1 {
         font-family: "SketchLogs-RyVl";
         color: rgba(22, 12, 1, 0.904);
         border-radius: 15px;
-        font-size: 4.0em;
+        font-size: 4.6em;
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 5px;
@@ -611,101 +649,141 @@ a:hover{
         text-align: center;
         background-color: honeydew;
     }
-    
+
     h2 {
-        font-size: 2.6em;
+        font-size: 2.8em;
         text-align: center;
         margin-bottom: 5px;
         padding-left: 10px;
         padding-right: 10px;
         border-radius: 15px;
-        background-color: honeydew;
+        width: 1000px;
     }
-    
+
     h3 {
-        font-size: 2.0em;
+        font-size: 2.4em;
         text-align: center;
         margin-top: 2px;
         padding-left: 10px;
         padding-right: 10px;
         border-radius: 15px;
+        width: 600px;
+    }
+
+    .weather-header {
+        display: inline;
         background-color: honeydew;
     }
-    
+
+    .head-span {
+        display: inline-block;
+        background-color: honeydew;
+        border-radius: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     h4 {
-        font-size: 1.7em;
+        display: block;
+        font-size: 0.8em;
+        width: 73px;
         background-color: honeydew;
     }
-    
+
     .pageCounter {
-        font-size: 2.0em;
+        font-size: 2.2em;
         text-align: center;
         padding-left: 15px;
         padding-right: 15px;
         border-radius: 15px;
         background-color: honeydew;
     }
-    
+
     label {
-        font-size: 2.0em;
-        margin-left: 10px;
-        margin-right: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
+        font-size: 2.2em;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
         border-radius: 15px;
         background-color: honeydew;
     }
-    
+
     form {
         display: inline-block;
         text-align: center;
+        margin-top: 75px;
     }
-    
+
     input {
-        font-size: 1.8em;
-        margin-top: 250px;
+        font-size: 2.2em;
+        margin-top: 75px;
         margin-bottom: 10px;
         padding: 12px;
-        width: 75px;
+        width: 110px;
     }
-    
+
     .home-btn {
-        font-size: 1.4em;
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-        padding: 18px;
-        width: 100px;
-        height: 75px;
-    }
-    
-    .submit-btn {
-        font-size: 1.4em;
+        font-size: 1.8em;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 50px;
-        padding: 26px;
-        width: 125px;
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+        height: 75px;
+        width: 115px;
     }
-    
+
+    .submit-btn {
+        font-size: 2.4em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+    }
+
     .more-btn, .prev-btn {
-        font-size: 1.4em;
+        font-size: 1.8em;
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        width: 115px;
+    }
+
+    .detail-btns {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .detail-btns > button {
         text-align: center;
         display: inline-block;
         margin-top: 10px;
         margin-right: 10px;
-        margin-left: 10px;
-        padding: 14px;
-        width: 100px;
+        margin-left: 10px; 
+        margin-bottom: 65px;
+        padding: 5px;
+        width: 110px;
+        height: 75px;
     }
-    
-    .detail-btns {
-        display: flex;
-        justify-content: center;
+
+    .detail-btns > button > span {
+        display: block;
+        font-size: 1.8em;
     }
-    
+
     .detail-btns > button:hover {
         color: #faf5f5 !important;
         background: #f6b93b;
@@ -713,127 +791,148 @@ a:hover{
         transition: all 0.4s ease 0s;
         cursor: pointer;
     }
-    
+
+    .camp-header {
+        margin-top: 200px;
+    }
+
     .camp-img {
-        height: 200px;
-        width: 215px;
+        height: 225px;
+        width: 250px;
         border-radius: 50%;
         margin-top: 10px;
         margin-bottom: 40px;
         cursor: pointer;
     }
-    
+
+    .camp-detail-img {
+        height: 250px;
+        width: 275px;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-bottom: 23px;
+        cursor: default;
+    }
+
     .accordion-container {
-        margin-top: 25px;
-        width: 45%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 100px;
     }
-    
+
     .weather-info {
+        background-repeat: no-repeat;
         position: absolute;
         top: 0;
         left: 0;
         margin-top: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
+        margin-left: 10px;
         word-wrap: break-word;
     }
-    
-    .weather-info > h3, .weather-info > h4 {
-        margin-top: 0px;
+
+    .weather-info > h3 {
+        margin-top: 10px;
         margin-bottom: 5px;
         border-radius: 0;
         text-align: center;
         background-color: none;
+        font-size: 32px;
     }
-    
+
+    .weather-info > h4 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border-radius: 0;
+        text-align: center;
+        background-color: none;
+        font-size: 28px;
+        width: 125px;
+    }
+
     .weatherIcon {
         display: block;
-        margin-left: auto;
+        margin-left: 10px;
         margin-right: auto;
-        height: 100px;
-        width: 100px;
+        height: 115px;
+        width: 110px;
     }
-    
-    .fa-home {
-        width: 50px;
-    }
-    
+
     img.gif {
         display: block;
         margin-left: auto;
         margin-right: auto;
         padding: 50x;
-        width: 150px;
-        height: 150px;
-        margin-top: 350px;
+        width: 175px;
+        height: 175px;
+        margin-top: 300px;
     }
-    
+
     p, a {
         color: black;
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
-    
+
     a:hover{
         color: blue;
     }
-    
+
     /* Accordion */
-    
+
     .accordion {
         background-color: #eee;
         color: #444;
         cursor: pointer;
         padding: 18px;
-        width: 100%;
-        font-size: 22px;
+        width: 50%;
+        font-size: 26px;
         text-align: left;
         border: 1px solid #444;
         outline: none;
         transition: 0.4s;
     }
-    
+
     /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
     .active, .accordion:hover {
-        /* background-color: rgba(120, 161, 120, 0.877); */
         background-color: #f6b93b;
     }
-    
+
     /* Style the accordion panel. Note: hidden by default */
     .panel {
         text-align: left;
         padding: 0 18px;
-        width: 100%;
+        width: 50%;
         background-color: rgba(185, 185, 185, 0.74);
         display: none;
         overflow: hidden;
     }
-    
+
     .accordion:after {
         content: '\02795'; /* Unicode character for "plus" sign (+) */
         font-size: 13px;
         color: #777;
         float: right;
+        margin-top: 5px;
         margin-left: 5px;
     }
-    
+
     .active:after {
         content: "\2796"; /* Unicode character for "minus" sign (-) */
     }
-    
+
     .submit-btn {
         color: #080808 !important;
         text-transform: uppercase;
         text-decoration: none;
         background: #ffffff;
-        padding: 20px;
+        padding: 12px;
         border: 2px solid #494949 !important;
         display: block;
         transition: all 0.4s ease 0s;
     }
-    
+
     .home-btn:hover, .submit-btn:hover, .back-results-btn:hover, .more-btn:hover, .prev-btn:hover {
         color: #000000 !important;
         background: #f6b93b;
@@ -842,5 +941,4 @@ a:hover{
         cursor: pointer;
     }
 }
-
 
