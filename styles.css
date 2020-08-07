@@ -4,15 +4,16 @@
     color: black;
 }
 
-@font-face {
-    font-family: 'SketchLogs-RyVl';
+/* @font-face {
+    font-family: 'SketchLogs';
+    src: url('./fonts/SketchLogs.ttf') format('truetype');
     src: url('./fonts/SketchLogs-RyVl.ttf') format('truetype');
     src: url('./fonts/SketchLogs.eot');
     src: url('./fonts/SketchLogs.eot?#iefix') format('embedded-opentype'),
         url('./fonts/SketchLogs.woff2') format('woff2'),
         url('./fonts/SketchLogs.woff') format('woff'),
         url('./fonts/SketchLogs.svg#SketchLogs') format('svg');
-}
+} */
 
 html {
     background: url("happycampimg/forestbig.jpg") no-repeat center center fixed; 
